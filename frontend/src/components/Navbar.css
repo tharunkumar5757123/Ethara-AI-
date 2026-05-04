@@ -1,0 +1,113 @@
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Items */
+.nav-item {
+  margin: 0;
+}
+
+/* Links */
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.25s ease-in-out;
+}
+
+.nav-links:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active link (optional for React NavLink) */
+.nav-links.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* User text */
+.nav-user {
+  color: white;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+/* Logout button */
+.nav-logout {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.nav-logout:hover {
+  background-color: white;
+  color: #667eea;
+}
+
+/* ===================== */
+/* 📱 MOBILE RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links,
+  .nav-logout {
+    width: 100%;
+    display: block;
+  }
+
+  .nav-user {
+    text-align: center;
+  }
+}

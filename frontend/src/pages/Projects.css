@@ -1,0 +1,243 @@
+/* =========================
+   HEADER
+========================= */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.projects-header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #333;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+.form-card {
+  margin-bottom: 30px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+  margin-bottom: 18px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* TEXTAREA */
+.form-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.form-card textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 6px rgba(102, 126, 234, 0.25);
+}
+
+/* =========================
+   PROJECT GRID
+========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+.project-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  border-left: 4px solid #667eea;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* TITLE */
+.project-card h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+/* DESCRIPTION */
+.project-card p {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+/* META */
+.project-meta {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.project-meta small {
+  color: #999;
+  font-size: 12px;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.project-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.project-actions button {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+.btn-primary {
+  background-color: #667eea;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #5568d3;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   DANGER BUTTON
+========================= */
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   EMPTY STATE (optional)
+========================= */
+.empty-state {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+}
+
+.add-member {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+  position: relative;
+}
+
+.add-member input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 6px);
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+  z-index: 50;
+}
+
+.search-results li {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-results li:hover {
+  background: #f5f7ff;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-loading {
+  color: #555;
+  font-size: 13px;
+}
+
+.member-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #eef2ff;
+  color: #2c3e50;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin: 4px 4px 0 0;
+}
+
+.member-chip span {
+  font-weight: 600;
+}
