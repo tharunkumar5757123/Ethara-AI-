@@ -114,7 +114,7 @@ function Signup({ onLogin }) {
           </div>
 
           {/* ✅ ROLE SELECTION (IMPORTANT FOR ADMIN CONTROL) */}
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>Role</label>
             <select
               name="role"
@@ -124,7 +124,7 @@ function Signup({ onLogin }) {
               <option value="Member">Member</option>
               <option value="Admin">Admin</option>
             </select>
-          </div>
+          </div> */}
 
           <div className="form-group">
             <label>Password</label>
