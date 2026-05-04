@@ -38,6 +38,16 @@ app.use("/api/tasks", require("./routes/taskRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
 // =====================
+// ROOT ENDPOINT
+// =====================
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Team Task Manager API is running 🚀",
+  });
+});
+
+// =====================
 // HEALTH CHECK
 // =====================
 app.get("/api/health", (req, res) => {
