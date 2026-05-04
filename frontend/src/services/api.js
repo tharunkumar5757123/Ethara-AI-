@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000";
+// =====================
+// BASE URL (PRODUCTION SAFE)
+// =====================
+const API_URL = import.meta.env.VITE_API_URL;
 
 // =====================
 // AXIOS INSTANCE
@@ -14,7 +16,7 @@ const api = axios.create({
 });
 
 // =====================
-// REQUEST INTERCEPTOR (TOKEN)
+// REQUEST INTERCEPTOR (TOKEN ATTACH)
 // =====================
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
@@ -38,7 +40,6 @@ api.interceptors.response.use(
       localStorage.removeItem("token");
       localStorage.removeItem("user");
 
-      // safer redirect
       window.location.replace("/login");
     }
 
@@ -73,11 +74,11 @@ export const projectAPI = {
   updateProject: (id, data) => api.put(`/projects/${id}`, data),
   deleteProject: (id) => api.delete(`/projects/${id}`),
 
-  // 👇 MEMBER MANAGEMENT (future dropdown support)
   addMember: (projectId, memberId) =>
     api.post(`/projects/${projectId}/add-member`, { memberId }),
 
-  searchUsers: (search) => api.get(`/users`, { params: { search } }),
+  searchUsers: (search) =>
+    api.get(`/users`, { params: { search } }),
 
   removeMember: (projectId, memberId) =>
     api.delete(`/projects/${projectId}/remove-member/${memberId}`),
@@ -90,13 +91,17 @@ export const taskAPI = {
   getTasksByProject: (projectId) =>
     api.get(`/tasks/${projectId}`),
 
-  createTask: (data) => api.post("/tasks", data),
+  createTask: (data) =>
+    api.post("/tasks", data),
 
-  updateTask: (id, data) => api.put(`/tasks/${id}`, data),
+  updateTask: (id, data) =>
+    api.put(`/tasks/${id}`, data),
 
-  deleteTask: (id) => api.delete(`/tasks/${id}`),
+  deleteTask: (id) =>
+    api.delete(`/tasks/${id}`),
 
-  getDashboardStats: () => api.get("/tasks/stats/dashboard"),
+  getDashboardStats: () =>
+    api.get("/tasks/stats/dashboard"),
 };
 
 export default api;
