@@ -23,7 +23,6 @@ function Tasks() {
     dueDate: "",
     priority: "Medium",
     status: "To Do",
-    assignedTo: "",
   });
 
   // =====================
@@ -80,7 +79,6 @@ function Tasks() {
         dueDate: "",
         priority: "Medium",
         status: "To Do",
-        assignedTo: "",
       });
 
       setShowForm(false);
@@ -209,15 +207,6 @@ function Tasks() {
               onChange={handleChange}
             />
 
-            {/* ASSIGN USER (ID FOR NOW) */}
-            <input
-              type="text"
-              name="assignedTo"
-              value={formData.assignedTo}
-              onChange={handleChange}
-              placeholder="Assign User ID"
-            />
-
             <select
               name="priority"
               value={formData.priority}
@@ -246,9 +235,7 @@ function Tasks() {
             {tasksByStatus[status].map((task) => {
 
               const assignedUser =
-                typeof task.assignedTo === "object"
-                  ? task.assignedTo?.name
-                  : task.assignedTo || "Unassigned";
+                task.assignedTo?.name || "Unassigned";
 
               return (
                 <div key={task._id} className="task-card">

@@ -88,6 +88,7 @@ exports.createTask = async (req, res) => {
       status,
       assignedTo: assignedTo || null,
       projectId,
+      createdBy: req.user.id,
     });
 
     const populatedTask = await Task.findById(task._id).populate(
