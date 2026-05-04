@@ -20,11 +20,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // =====================
-// CORS CONFIG
+// CORS CONFIG (FIXED FOR VERCEL)
 // =====================
 app.use(
   cors({
-    origin: ["http://localhost:5173", process.env.FRONTEND_URL],
+    origin: [
+      "http://localhost:5173",
+      "https://ethara-ai-flax.vercel.app"
+    ],
     credentials: true,
   })
 );
